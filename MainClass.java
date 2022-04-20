@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class MainClass{   
     public static void main(String args[]){
     //Declaring String variable  
+    
     Scanner sc = new Scanner(System.in);
     
     MainClass ax = new MainClass();
-    //ax.forAmstrong(sc);
-    ax.forpalindrome(sc);
-    
-
+    ax.loop(sc);
 }
+
+
 
 void forAmstrong(Scanner ams){
     System.out.println("**************Amstrong Number Checker**************");
@@ -24,6 +24,7 @@ void forAmstrong(Scanner ams){
     ac.amstromgChecker(i, length);
     ac.display(i);
 }
+
 void forpalindrome(Scanner pal){
     System.out.println("**************Palindrome Number Checker**************");
     System.out.print("Enter the value: ");
@@ -32,6 +33,30 @@ void forpalindrome(Scanner pal){
     fv.palindromeChecker(num);
     fv.show(num);
 }
+
+
+void loop(Scanner inputScanner){
+    int choice;
+    do{
+        
+        System.out.println(
+            "\n 1. Press 1 for Amstrong number Check "+
+            "\n 2. Press 2 for palindronme numbercheck "+
+            "\n 3. Press 3 for exit");
+            System.out.print("Enter your choice: "); 
+            choice = inputScanner.nextInt();
+            switch(choice){
+                case 1: forAmstrong(inputScanner);
+                        break;  
+                case 2: forpalindrome(inputScanner);
+                        break;
+                default : System.exit(0);
+            }
+            
+    }while(choice != 3);
+}
+
+
 } 
 
 
